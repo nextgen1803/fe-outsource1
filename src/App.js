@@ -1,11 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import HomePage from "./page/homePage";
+import {BrowserRouter as Switch, Route} from 'react-router-dom';
 
 function App() {
-  return (
-    <div>Hello nextGen!!!!!!!!!!!!!</div>
-  );
+    return (
+      <main>
+        <Switch>
+          <Route path="/" exact><HomePage/></Route>
+        </Switch>
+      </main>
+    );
 }
 
 export default App;
