@@ -28,19 +28,19 @@ class HomePage extends React.Component {
             </div>
             <div className={"nav-links"}>
               <ul>
-                <li className={"nav-links-home"}>
+                <li className={"nav-link"}>
                   <NavLink to="/" active>HOME</NavLink>
                 </li>
-                <li className={"nav-links-shop"}>
+                <li className={"nav-link"}>
                   <NavLink to="/shop">SHOP</NavLink>
                 </li>
-                <li className={"nav-links-product"}>
+                <li className={"nav-link"}>
                   <NavLink to="/product">PRODUCT</NavLink>
                 </li>
-                <li className={"nav-links-cart"}>
+                <li className={"nav-link"}>
                   <NavLink to="/cart">CART</NavLink>
                 </li>
-                <li className={"nav-links-checkout"}>
+                <li className={"nav-link"}>
                   <NavLink to="/checkout">CHECKOUT</NavLink>
                 </li>
               </ul>
@@ -191,7 +191,17 @@ class HomePage extends React.Component {
         </div>
         {/*middle of page*/}
         <div className="homepage-subscribe">
-
+          <div className="subscribe-description">
+            <h2>Subscribe for a <span>25% Discount</span></h2>
+            <p>Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate consectetur. Donec
+              auctor interdum purus, ac finibus massa bibendum nec.</p>
+          </div>
+          <div className="subscribe-form">
+            <form action="">
+              <input type="text" placeholder={"Your E-mail"}/>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
         </div>
       </div>
     );

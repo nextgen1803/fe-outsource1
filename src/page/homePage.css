@@ -7,8 +7,10 @@
 }
 
 .homepage-main {
-  height: 100%;
+  height: auto;
+  max-height: 1505px;
   display: flex;
+  overflow: hidden;
 }
 
 .main-nav {
@@ -43,9 +45,7 @@
   cursor: pointer;
 }
 
-.nav-links ul .nav-links-home, .nav-links ul .nav-links-shop,
-.nav-links ul .nav-links-product, .nav-links ul .nav-links-cart,
-.nav-links ul .nav-links-checkout {
+.nav-links ul .nav-link {
   position: relative;
 }
 
@@ -152,7 +152,7 @@
   transition: color 0.3s;
 }
 
-/*CSS for main products*/
+/*CSS for categories*/
 .main-categories {
   display: flex;
 }
@@ -161,14 +161,12 @@
   box-sizing: border-box;
   width: 28vw;
   height: auto;
-  max-height: 470px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-.category {
-  position: relative;
-}
-
-.category-link .category-description {
+.category, .category-link .category-description {
   position: relative;
 }
 
@@ -230,6 +228,82 @@
 
 /*CSS for subscribe*/
 .homepage-subscribe {
-  height: 5vh;
-  background-color: #61dafb;
+  height: 316px;
+  background-color: #3c3c3c;
+  display: flex;
+  flex-grow: 1;
+  padding: 0 15vw;
+}
+
+.subscribe-description, .subscribe-form {
+  width: 50%;
+}
+
+.subscribe-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.subscribe-description h2 {
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.subscribe-description h2 span {
+  color: #fbb710;
+}
+
+.subscribe-description p {
+  color: #b3b1b1;
+  font-size: 16px;
+  text-align: justify;
+  margin: 0;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.subscribe-form form {
+  position: relative;
+  top: 5%;
+}
+
+.subscribe-form input[type=text] {
+  width: 450px;
+  height: 50px;
+  box-sizing: border-box;
+  border: none;
+  color: #afafaf;
+  font-weight: bold;
+  font-size: 14px;
+  font-style: italic;
+  padding: 0 30px;
+}
+
+.subscribe-form button {
+  width: 125px;
+  height: 50px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background-color: #fbb710;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.subscribe-form input[type=text]:focus, .subscribe-form button:focus {
+  outline: none;
 }
