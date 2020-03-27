@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "./../assets/logo.png";
+import logoWhite from "./../assets/logo_white.png";
 import cart from "./../assets/cart.png";
 import favorites from "./../assets/favorites.png";
 import search from "./../assets/search.png";
@@ -17,6 +18,25 @@ import {Link, NavLink} from "react-router-dom";
 import "./homePage.css";
 
 class HomePage extends React.Component {
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.scrollFunction, true);
+  }
+
+  scrollFunction() {
+    let myBtn = document.getElementById("topBtn")
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      myBtn.style.display = "block";
+    } else {
+      myBtn.style.display = "none";
+    }
+  }
+
+  topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+
   render() {
     return (
       <div className={"container"}>
@@ -198,11 +218,40 @@ class HomePage extends React.Component {
           </div>
           <div className="subscribe-form">
             <form action="">
-              <input type="text" placeholder={"Your E-mail"}/>
+              <input type="email" placeholder={"Your E-mail"}/>
               <button type="submit">Subscribe</button>
             </form>
           </div>
         </div>
+        {/*footer of page*/}
+        <div className="homepage-footer">
+          <div className="footer-description">
+            <Link to={"/"}><img src={logoWhite} alt="Logo"/></Link>
+            <p>Template of this website copied from Colorlib.</p>
+          </div>
+          <div className="footer-links">
+            <ul>
+              <li className={"footer-link"}>
+                <NavLink to="/" active>HOME</NavLink>
+              </li>
+              <li className={"footer-link"}>
+                <NavLink to="/shop">SHOP</NavLink>
+              </li>
+              <li className={"footer-link"}>
+                <NavLink to="/product">PRODUCT</NavLink>
+              </li>
+              <li className={"footer-link"}>
+                <NavLink to="/cart">CART</NavLink>
+              </li>
+              <li className={"footer-link"}>
+                <NavLink to="/checkout">CHECKOUT</NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button onClick={this.topFunction.bind()} id={"topBtn"} className="top-btn">
+          <i className="fas fa-angle-up"/>
+        </button>
       </div>
     );
   }

@@ -227,7 +227,7 @@
 }
 
 /*CSS for subscribe*/
-.homepage-subscribe {
+.homepage-subscribe, .homepage-footer {
   height: 316px;
   background-color: #3c3c3c;
   display: flex;
@@ -235,7 +235,8 @@
   padding: 0 15vw;
 }
 
-.subscribe-description, .subscribe-form {
+.subscribe-description, .subscribe-form,
+.footer-description, .footer-links {
   width: 50%;
 }
 
@@ -275,7 +276,7 @@
   top: 5%;
 }
 
-.subscribe-form input[type=text] {
+.subscribe-form input[type=email] {
   width: 450px;
   height: 50px;
   box-sizing: border-box;
@@ -304,6 +305,75 @@
   z-index: 1;
 }
 
-.subscribe-form input[type=text]:focus, .subscribe-form button:focus {
+.subscribe-form input[type=email]:focus, .subscribe-form button:focus {
   outline: none;
+}
+
+/*CSS for footer*/
+.homepage-footer {
+  background-color: #252525;
+}
+
+.footer-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgba(255, 255, 255, .4);
+  padding: 0 15px;
+}
+
+.footer-links {
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color .4s;
+  cursor: pointer;
+}
+
+.footer-links ul li a:hover {
+  color: #fbb710;
+  transition: color .3s;
+}
+
+/*CSS for top button*/
+.top-btn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 60px; /* Place the button at the bottom of the page */
+  right: 60px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #fbb710; /* Set a background color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .3);
+  /*line-height: 40px;*/
+}
+
+.top-btn:hover {
+  background-color: #000; /* Add a dark-grey background on hover */
+}
+
+.top-btn i {
+  font-size: 30px;
+  color: #fff;
 }
