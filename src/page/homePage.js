@@ -190,7 +190,7 @@ class HomePage extends React.Component {
           </div>
         </div>
         {/*middle of page*/}
-        <div className="homepage-subcribe">
+        <div className="homepage-subscribe">
 
         </div>
       </div>
